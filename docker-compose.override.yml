@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  cursesapi:
+    container_name: cursesapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5081:80"
+  studentsapi:
+    container_name: studentsapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5082:80"
+  sqldata:
+    container_name: Database
+    environment:
+      SA_PASSWORD: "default1A!"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
